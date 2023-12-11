@@ -1,6 +1,6 @@
 let myLibrary = [];
 
-function Book(title, author, read = 0) {
+function Book(title, author, read = false) {
   // the constructor...
   this.title = title;
   this.author = author;
@@ -78,7 +78,7 @@ submitForm.addEventListener('click', (event) => {
     let formRead = document.querySelector('#read');
 
     if (isValidForm(formTitle) && isValidForm(formAuthor) && isValidForm(formRead)) {
-        let newBook = new Book(formTitle.value, formAuthor.value, formRead.value);
+        let newBook = new Book(formTitle.value, formAuthor.value, formRead.checked);
         myLibrary.push(newBook);
         addBookToLibrary();
         dialogForm.close();
