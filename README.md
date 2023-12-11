@@ -1,1 +1,2 @@
-# library
+# Library App
+Welcome to the Library App, a simple web application to manage your book collection. This project allows you to add new books, toggle their read status, and remove them from your library. The interface is designed with a clean and user-friendly layout. To try it out, visit the live version [here](https://grantgreenberg.github.io/library/). Feel free to add, update, and organize your bookshelf seamlessly. Happy reading!
