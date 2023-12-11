@@ -9,10 +9,30 @@
 <body>
     <div class="container">
         <div class="header">
-            
+            <button class="add-book-button">New Book</button>
+            <dialog class="dialog">
+                <form>
+                    <div class="form-div">
+                        <label for="title">Title: </label>
+                        <input type="text" name="title" id="title" pattern="^[a-zA-Z0-9' ]+$">
+                    </div>
+                    <div class="form-div">
+                        <label for="author">Author: </label>
+                        <input type="text" name="author" id="author" pattern="^[a-zA-Z0-9' ]+$">
+                    </div>
+                    <div class="form-div">
+                        <label for="read">Read: </label>
+                        <input type="number" name="read" id="read" pattern="^[1|0]$">
+                    </div>
+                    <div class="form-div">
+                        <button class="cancel-form">Cancel</button>
+                        <button type="submit" class="submit-form">Submit</button>
+                    </div>
+                </form>
+            </dialog>
         </div>
         <div class="library">
-
+            
         </div>
         <div class="footer">
 

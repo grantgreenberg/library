@@ -11,6 +11,102 @@
     padding: 0;
 }
 
+body {
+    background-color: var(--main-background);
+    color: var(--main-color);
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: var(--dark-accent);
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.add-book-button {
+    background-color: var(--accent);
+    color: var(--main-background);
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 2px solid var(--accent);
+}
+
+.form-div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--main-color);
+    background-color: var(--main-background);
+    color: var(--main-color);
+}
+
+.form-div button {
+    background-color: var(--dark-accent);
+    color: var(--main-color);
+    border: none;
+    padding: 8px 16px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.library {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
 .book-card {
-    border: 1px solid red;
+    background-color: var(--main-background);
+    padding: 10px;
+    border: 1px solid var(--main-color);
+    max-height: 200px;
+}
+
+.toggle-read {
+    background-color: var(--accent);
+    color: var(--main-background);
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.read-yes {
+    color: green;
+}
+
+.read-no {
+    color: red;
+}
+
+.footer {
+    background-color: var(--dark-accent);
+    padding: 10px;
+    text-align: center;
 }
