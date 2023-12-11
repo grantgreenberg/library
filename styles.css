@@ -1,0 +1,16 @@
+:root {
+    --main-background: #0E0B16;
+    --main-color: #E7DFDD;
+    --accent: #A239CA;
+    --dark-accent: #4717F6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.book-card {
+    border: 1px solid red;
+}
