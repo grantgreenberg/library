@@ -1,5 +1,4 @@
-const myLibrary = [{title: 'Harry Potter', author: 'JK Rowling', read: 0}, 
-                    {title: 'Lord of the Rings', author: 'Tolkien', read: 1}];
+let myLibrary = [];
 
 function Book(title, author, read = 0) {
   // the constructor...
@@ -23,9 +22,15 @@ function addBookToLibrary() {
         let bookAuthor = document.createElement('p');
         let bookRead = document.createElement('p');
         let readButton = document.createElement('button');
+        let removeButton = document.createElement('button');
+
+        bookTitle.classList.add('book-title');
 
         readButton.classList.add('toggle-read');
         readButton.textContent = 'Toggle Read';
+
+        removeButton.classList.add('remove-book');
+        removeButton.textContent = 'Remove Book';
 
         bookTitle.textContent = `Title: ${obj.title}`;
         bookAuthor.textContent = `Author: ${obj.author}`;
@@ -45,6 +50,7 @@ function addBookToLibrary() {
         newBookDiv.appendChild(bookAuthor);
         newBookDiv.appendChild(bookRead);
         newBookDiv.appendChild(readButton);
+        newBookDiv.appendChild(removeButton);
 
         libraryDiv.appendChild(newBookDiv);
 
@@ -77,7 +83,7 @@ submitForm.addEventListener('click', (event) => {
         addBookToLibrary();
         dialogForm.close();
     } else {
-        alert('Invalid input patterns. Please check your inputs.');
+        alert('Invalid inputs. Please check your title and author for special characters. The Read input should be either 1 or 0.');
     }
 
 });
@@ -101,18 +107,33 @@ cancelForm.addEventListener('click', (event) => {
 
 document.querySelector('.library').addEventListener('click', (event) => {
 
-    if (event.target.classList.contains('toggle-read')) {
+    const target = event.target;
 
-        const bookCard = event.target.closest('.book-card');
-        
+    if (target.classList.contains('toggle-read')) {
+
+        const bookCard = target.closest('.book-card');
         const readStatus = bookCard.querySelector('.read-status');
 
         if (readStatus.classList.contains('read-yes')) {
+
             readStatus.textContent = 'Read: No';
             readStatus.classList.replace('read-yes', 'read-no');
+
         } else {
+
             readStatus.textContent = 'Read: Yes';
             readStatus.classList.replace('read-no', 'read-yes');
+
         }
+    }
+
+    if (target.classList.contains('remove-book')) {
+
+        const bookCard = target.closest('.book-card');
+        const bookTitle = bookCard.querySelector('.book-title').textContent.slice(7);
+
+        myLibrary = myLibrary.filter(book => book.title !== bookTitle);
+
+        addBookToLibrary();
     }
 });
